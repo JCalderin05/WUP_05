@@ -19,9 +19,9 @@ druggies = filter(triUmp, triUmp$DrugUser == 'yes')
 
 A new  preventative aides drug (triUmpsal) is under test in clinical trials. Consider only the DrugUsers, does this drug seem effective?  Hint - use dplyr to obtain that subpopulation with the filter command.
 
-$H_0$ There is no difference between the new preventative aids drug treatment and the effect it has on drug users?
+$H_0$ There is no difference between the new preventative aids drug treatment and the effect it has on drug users
 
-$H_A$ There is a difference between the new preventative aids drug treatment and how it effects drug users?
+$H_A$ There is a difference between the new preventative aids drug treatment and how it effects drug users
 
 
 # Methods
@@ -41,12 +41,11 @@ Both our response variable and explanatory variable are categorical. Therefore w
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
 ```{r}
-barchartGC(~infected + treatment,data=druggies)
 barchartGC(~infected + treatment,data=druggies, type="percent")
 ```
 
 
-
+The bar graph display the percentage of people with aids that got the placebo shot is significantly higher than the people with aids that received the shot. This means you are less likely to get aids with the preventative shot.  
 
 
 ### Numerical Descriptive Results
@@ -57,7 +56,6 @@ barchartGC(~infected + treatment,data=druggies, type="percent")
 ```{r}
 table1 <- xtabs(~infected + treatment, data=druggies)
 rowPerc(table1)
-colPerc(table1)
 ```
 
 
