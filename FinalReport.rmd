@@ -45,7 +45,7 @@ barchartGC(~infected + treatment,data=druggies, type="percent")
 ```
 
 
-The bar graph display the percentage of people with aids that got the placebo shot is significantly higher than the people with aids that received the shot. This means you are less likely to get aids with the preventative shot.  
+The bar graph displays the percentage of people with aids that got the placebo drug is significantly higher than the people with aids that received the preventative drug. This means you are less likely to get aids with the preventative drug.  
 
 
 ### Numerical Descriptive Results
@@ -58,7 +58,7 @@ table1 <- xtabs(~infected + treatment, data=druggies)
 rowPerc(table1)
 ```
 
-
+The table shows that the placebo group was roughly 3 times more likely to get infected compared to the drug group. About 75% of the infected group was given the placebo shot, while only about 25 percent of the infected group was given the vaccine. 
 
 
 ## Inferential Results
@@ -69,8 +69,9 @@ rowPerc(table1)
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
 ```
+
+The P-Value is 0.0000001242 which is well below 0.05. This means we reject the NULL Hypothesis. 
 
 
 ```{r}
@@ -78,7 +79,7 @@ druggies$infected = factor(druggies$infected, c('none', 'aids'))
 fisher.test(druggies$treatment,druggies$infected)
 ```
 
-
+The P value in this test is equal to .0000000423. The people who got the vaccine are almost 3 times more protected from aids compared to the placebo vaccinated people.
 
 
 # Discussion and Conclusion
@@ -86,4 +87,5 @@ fisher.test(druggies$treatment,druggies$infected)
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
 
+Is the vaccine effective in preventing aids with the new preventative drug? Yes, the vaccine is effective in preventing aids. Our graphical data showed the significant difference in the people with aids with the vaccine compared to the placebo vaccine. Our numerical and inferential data also tells us that the vaccine was 3 times more protective to aids than the placebo vaccine. We conducted a Chisq test which gave us a P-Value less than 0.05; which means we rejected the NULL Hypothesis. In conclusion, the new preventative drug treatment is effective against the infection aids. 
 
